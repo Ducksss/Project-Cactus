@@ -31,7 +31,7 @@ const mutationScanner = (function () {
 })();
 
 // Scans the content
-const contentScanner = (content) => {
+const contentScanner = async (content) => {
     return new Promise((resolve, reject) => {
         try {
             var parsedContent = content.querySelectorAll('div[class="css-901oao r-18jsvk2 r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-bnwqim r-qvutc0"] > span[class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"]')[0];
@@ -58,7 +58,7 @@ const contentScanner = (content) => {
 };
 
 // Fetch from the database
-const fetchDataFromAPI = (cleanedText) => {
+const fetchDataFromAPI = async (cleanedText) => {
     return new Promise(async (resolve, reject) => {
         fetch('https://heroku-cactus.herokuapp.com/predict', {
             method: 'POST',
@@ -77,13 +77,13 @@ const fetchDataFromAPI = (cleanedText) => {
                 reject({ name: "fetchDataFromAPI", description: "fetchDataFromAPI" })
             })
 
-        // await timeout(1000);
+        // await timeout(1500);
         // resolve([[Math.random()]][0])
     })
 };
 
 // Function to call for each element of the homepage
-const runScript = async (allNodes) => {
+const runTweetCheck = async (allNodes) => {
     try {
         for (let node of allNodes) {
             let isNotPreppended = node.querySelectorAll('div[id="delta987"]');
@@ -98,9 +98,32 @@ const runScript = async (allNodes) => {
                     const content = await fetchDataFromAPI(cleanedText);
 
                     if (content[0] * 100 > 60) {
-                        newNode.innerHTML = `<div class="css-1dbjc4n r-18u37iz" id="delta987" style="border: 1px solid var(--petalc);background: #FE5C5C;font: 1rem sans-serif;padding-right: 1rem;padding-top: 1rem;padding-bottom: 1rem;padding-left: 1rem;">Warning... this tweet is ${(content[0] * 100).toFixed(2)}% likely to be fake news</div>`
+                        // fake news
+                        newNode.innerHTML = `
+                                            <div class="css-1dbjc4n r-18u37iz" id="delta987"
+                                                style="background: #FE5C5C;font: 1rem sans-serif;padding-left: 1rem;padding-right: 1rem;padding-top: 1rem;padding-bottom: 1rem;">
+                                                <div style="text-align: start;display: block;">
+                                                    Warning... this tweet is ${(content[0] * 100).toFixed(2)}% likely to be fake news
+                                                </div>
+                                                <div style="text-align: end;flex: auto;font-size: 15px;text-decoration: underline;display: block;" class="btn">
+                                                    <a href="https://project-cactus-c9549.web.app/?news=${cleanedText}" target="_blank" waprocessedanchor="true">
+                                                        Not right?</a>
+                                                </div>
+                                            </div>`
                     } else {
-                        newNode.innerHTML = `<div class="css-1dbjc4n r-18u37iz" id="delta987" style="border: 1px solid var(--petalc);background: #9BFE87;font: 1rem sans-serif;padding-right: 1rem;padding-top: 1rem;padding-bottom: 1rem;padding-left: 1rem;">This news is vetted and is safe!</div>`
+                        // factual news
+                        newNode.innerHTML = `
+                                            <div class="css-1dbjc4n r-18u37iz" id="delta987"
+                                                style="background: #9BFE87;font: 1rem sans-serif;padding-left: 1rem;padding-right: 1rem;padding-top: 1rem;padding-bottom: 1rem;">
+                                                <div style="text-align: start; display: block;">
+                                                    This news is vetted and is safe
+                                                </div>
+                                                <div style="text-align: end;flex: auto;/* color: rgb(29, 155, 240); */font-size: 15px;text-decoration: underline;display: block;"
+                                                    class="btn">
+                                                    <a href="https://project-cactus-c9549.web.app/?news=${cleanedText}" target="_blank">
+                                                        Not right?</a>
+                                                </div>
+                                            </div>`
                     }
 
                     node.prepend(newNode);
@@ -154,7 +177,7 @@ const getPostsContainer = async () => {
 const processPostsContainer = async (res) => {
     try {
         // Content that is on load
-        runScript(res.children);
+        runTweetCheck(res.children);
 
         // Content that is on scroll
         // - For any new mutation, scan this
@@ -167,10 +190,13 @@ const processPostsContainer = async (res) => {
             });
 
             // Run the script for added nodes
-            runScript(addedNodes);
+            runTweetCheck(addedNodes);
 
-            console.log("scrolling down...");
-            console.log('Added:', addedNodes);
+            /**
+             * FOR DEBUGGING SAKE 
+             */
+            // console.log("scrolling down...");
+            // console.log('Added:', addedNodes);
         });
     } catch (error) {
 
