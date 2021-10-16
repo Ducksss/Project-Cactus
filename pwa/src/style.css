@@ -1,0 +1,282 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.dark {
+    color: white;
+    background-color: #212121;
+}
+
+body.dark textarea {
+    color: white;
+}
+
+@media only screen and (max-width: 387px) {
+    .logo-link h1 {
+        display: none;
+    }
+}
+
+.share-btn {
+    outline: none;
+    border: solid 2px black;
+    border-radius: 13px;
+
+    font-size: 21px;
+    font-weight: bold;
+    background-color: transparent;
+
+    padding: 13px 21px;
+}
+
+.share-btn:hover {
+    cursor: pointer;
+}
+
+.text-muted {
+    color: #888888;
+}
+
+code {
+    padding: 5px 8px;
+    border-radius: 8px;
+
+    color: white;
+    background-color: #343434;
+}
+
+body.dark code {
+    color: #343434;
+    background-color: #f1f1f1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > div {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo-link {
+    user-select: none;
+}
+
+nav .logo-link:hover {
+    cursor: pointer;
+}
+
+nav .logo {
+    height: 55px;
+    width: 55px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-container .logo {
+    height: 13vh;
+    width: 13vh;
+}
+
+.container {
+    height: calc(100vh - 89px);
+    display: flex;
+    justify-content: center;
+}
+
+#model-results {
+    margin-top: 34px;
+}
+
+#model-results textarea {
+    margin-bottom: 8vh;
+}
+
+#model-results .share-button {
+    display: flex;
+    justify-content: center;
+}
+
+#centered-input {
+    align-self: center;
+}
+
+div h1,
+div h3, 
+div p {
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 0px;
+}
+
+h1.display-1 {
+    line-height: 8vh;
+    font-size: 8vh;
+    margin: 0px;
+}
+
+body.dark .loading-confidence {
+    user-select: none;
+    color: #212121;
+}
+
+textarea.search-box {
+    outline: none;
+    border: none;
+    border-radius: 21px;
+
+    width: calc(100vw - 84px);
+    max-width: 610px;
+    height: 144px;
+    margin: 21px 21px 0px 21px;
+    padding: 21px;
+
+    font-size: 21px;
+
+    background-color: #f1f1f1;
+
+    resize: none;
+}
+
+body.dark textarea.search-box {
+    background-color: #343434;
+}
+
+#centered-input textarea::placeholder {
+    text-align: center;
+}
+
+.small-button {
+    border: none;
+    border-radius: 13px;
+
+    color: white;
+    background-color: #212121;
+
+    height: 55px;
+    padding: 0px 21px;
+    margin-left: 13px;
+
+    font-size: 21px;
+    font-weight: bold;
+
+    user-select: none;
+
+    transition: all 0.3s ease-in-out;
+}
+
+body.dark .small-button {
+    color: black;
+    background-color: #f1f1f1;
+}
+
+.small-button h4 {
+    margin: 0px;
+}
+
+.small-button:hover, .small-button:active {
+    cursor: pointer;
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.15);
+}
+
+h4.dark-mode {
+    margin-right: 8px;
+}
+
+.switch {
+    border-radius: 23px;
+    width: 37px;
+    height: 18px;
+
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.switch:hover {
+    cursor: pointer;
+}
+
+.switch-state {
+    height: 18px;
+    width: 18px;
+
+    border-radius: 9px;
+
+    background-color: white;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.off {
+    background-color: #d9d9d9;
+}
+
+.on {
+    background-color: #2f89fc;
+    box-shadow: 0px 0px 8px rgba(47, 137, 252, 0.5);
+}
+
+.on .switch-state {
+    transform: translateX(100%);
+}
+
+.load {
+    display: flex;
+    z-index: 999;
+
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.load h2 {
+    display: flex;
+    z-index: 999;
+    color: white;
+
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+
+    top: 0;
+    bottom: -144px;
+    left: 0;
+    right: 0;
+}
+
+.loader {
+    position: fixed;
+    max-width: 101px;
+    max-height: 101px;
+}
+.move{
+    animation: spinAction 3s ease-in-out infinite;
+}
+
+@keyframes spinAction {
+    100%{
+        transform: rotate(1080deg);
+    }
+}
+
+#secondary{
+    animation-delay: 0.14s;
+}
+#third{
+    animation-delay: 0.26s;
+}
+#cover{
+    animation-delay: 0.38s;
+}

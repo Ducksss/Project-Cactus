@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26.004" height="39" viewBox="0 0 26.004 39">
+  <g id="Group_326" data-name="Group 326" transform="translate(-1980.997 -2105)">
+    <path id="Union_323" data-name="Union 323" d="M-9426,1221.5a8.008,8.008,0,0,1-8-8v-5.9q0-.052,0-.105a2.5,2.5,0,0,1,2.5-2.5,2.5,2.5,0,0,1,2.5,2.5h0v6a3,3,0,0,0,3,3h4v5Z" transform="translate(11414.998 911)" fill="#44a553"/>
+    <path id="Intersection_65" data-name="Intersection 65" d="M-9431,1215v-6.451a2.5,2.5,0,0,1,2,2.45v6a3.006,3.006,0,0,0,2.988,3A5.008,5.008,0,0,1-9431,1215Z" transform="translate(11414.996 907.502)" fill="#3a8946"/>
+    <path id="Union_327" data-name="Union 327" d="M-9423,1207.5h1v14h-4a7.951,7.951,0,0,1-5.645-2.331,7.952,7.952,0,0,1-2.355-5.631,5.966,5.966,0,0,0,1.771,4.217A5.961,5.961,0,0,0-9428,1219.5h5v-12Z" transform="translate(11414.998 911.001)" fill="#3a8946"/>
+    <rect id="Rectangle_2302" data-name="Rectangle 2302" width="6" height="39" rx="3" transform="translate(1991 2105)" fill="#44a553"/>
+    <path id="Intersection_63" data-name="Intersection 63" d="M-9430.5,1242.5v-36a2.989,2.989,0,0,1,.337-1.382A3,3,0,0,1-9428,1208v33a3,3,0,0,1-2.161,2.881A2.99,2.99,0,0,1-9430.5,1242.5Z" transform="translate(11425 900)" fill="#3a8946"/>
+    <path id="Union_322" data-name="Union 322" d="M-9429.5,1223.5h0a2.5,2.5,0,0,1-2.5-2.5,2.5,2.5,0,0,1,2.5-2.5v0h2a3,3,0,0,0,3-3v-8h0a2.5,2.5,0,0,1,2.5-2.5,2.5,2.5,0,0,1,2.5,2.5v8a8.009,8.009,0,0,1-8,8Z" transform="translate(11426.5 906.75)" fill="#44a553"/>
+    <path id="Subtraction_536" data-name="Subtraction 536" d="M-9427,1225h-2a2.507,2.507,0,0,1-2.45-2h4.45a6.006,6.006,0,0,0,6-6v-10.45a2.507,2.507,0,0,1,2,2.45v8A8.009,8.009,0,0,1-9427,1225Z" transform="translate(11426 905.25)" fill="#3a8946"/>
+  </g>
+</svg>
