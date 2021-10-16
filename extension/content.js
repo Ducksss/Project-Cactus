@@ -102,8 +102,8 @@ const runTweetCheck = async (allNodes) => {
                         newNode.innerHTML = `
                                             <div class="css-1dbjc4n r-18u37iz" id="delta987"
                                                 style="background: #FE5C5C;font: 1rem sans-serif;padding-left: 1rem;padding-right: 1rem;padding-top: 1rem;padding-bottom: 1rem;">
-                                                <div style="text-align: start;display: block;">
-                                                    Warning... this tweet is ${(content[0] * 100).toFixed(2)}% likely to be fake news
+                                                <div style="text-align: start;display: block; font-style: italic;">
+                                                    Be cautious... this tweet is ${(content[0] * 100).toFixed(2)}% likely to be fake news!
                                                 </div>
                                                 <div style="text-align: end;flex: auto;font-size: 15px;text-decoration: underline;display: block;" class="btn">
                                                     <a href="https://project-cactus-c9549.web.app/?news=${cleanedText}" target="_blank" waprocessedanchor="true">
@@ -115,8 +115,8 @@ const runTweetCheck = async (allNodes) => {
                         newNode.innerHTML = `
                                             <div class="css-1dbjc4n r-18u37iz" id="delta987"
                                                 style="background: #9BFE87;font: 1rem sans-serif;padding-left: 1rem;padding-right: 1rem;padding-top: 1rem;padding-bottom: 1rem;">
-                                                <div style="text-align: start; display: block;">
-                                                    This news is vetted and is safe
+                                                <div style="text-align: start; display: block; font-style: italic;">
+                                                    Hmm... this news looks good and safe!
                                                 </div>
                                                 <div style="text-align: end;flex: auto;/* color: rgb(29, 155, 240); */font-size: 15px;text-decoration: underline;display: block;"
                                                     class="btn">
