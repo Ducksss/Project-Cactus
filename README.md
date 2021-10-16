@@ -60,6 +60,7 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#References">References</a></li>
   </ol>
 </details>
 
@@ -68,7 +69,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<a href="https://project-cactus-c9549.web.app/"><img src="https://github.com/Ducksss/Project-Cactus/tree/main/assets/demo.gif" alt="demo.gif"></a>
+<a href="https://project-cactus-c9549.web.app/"><img src="assets/demo.gif" alt="demo.gif"></a>
 
 The past few years have seen a surge in the spread of fake news, and it's increasing impact on our daily lives. Unfortunately, the flood of fake news online has made it difficult and tiring for people to fact check what they see online. 
 
@@ -211,6 +212,7 @@ Project Link: [https://github.com/Ducksss/Project-Cactus](https://github.com/Duc
 - [KaiDMML/FakeNewsNet](https://github.com/KaiDMML/FakeNewsNet/tree/master/dataset)
 - [Fake and real news dataset](https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset)
 - [FakeCovid](https://github.com/Gautamshahi/FakeCovid)
+- [Readme-Template](https://github.com/othneildrew/Best-README-Template)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
