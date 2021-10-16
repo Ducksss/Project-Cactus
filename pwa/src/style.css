@@ -97,9 +97,26 @@ nav .logo {
     margin-bottom: 8vh;
 }
 
-#model-results .share-button {
+#model-results .button-bar {
     display: flex;
+    align-items: center;
     justify-content: center;
+}
+
+.issue h4 {
+    text-align: center;
+}
+
+.text-button {
+    user-select: none;
+    color: #fc5185;
+    font-weight: bold;
+    margin: 5px 8px;
+    text-decoration: underline;
+}
+
+.text-button:hover {
+    cursor: pointer;
 }
 
 #centered-input {

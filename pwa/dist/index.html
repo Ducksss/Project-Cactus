@@ -84,7 +84,13 @@
                         </g>
                     </svg>
 
-                    <h2>Verifying News</h2>
+                    <h2>{{ loadingText }}</h2>
+                </div>
+
+                <div v-else-if="issueReported" class="issue">
+                    <h4>
+                        Issue has been reported. Thank you!
+                    </h4>
                 </div>
 
                 <div v-else>
@@ -94,12 +100,14 @@
                     </h1>
                     <p>confident that this news is fake</p>
 
-                    <div class="share-button">
+                    <div class="button-bar">
                         <button class="small-button" type="button" @click="_shareLink">
                             <h4>
                                 share
                             </h4>
                         </button>
+
+                        <a class="text-button" @click="_reportIssue">Report Issue</a>
                     </div>
                 </div>
             </div>

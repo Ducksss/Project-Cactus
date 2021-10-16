@@ -8,36 +8,36 @@
     "orientation": "portrait-primary",
     "icons": [
       {
-        "src": "./Project Cactus.svg",
-        "type": "image/png", "sizes": "72x72"
+        "src": "Project Cactus.svg",
+        "type": "image/svg", "sizes": "72x72"
       },
       {
-        "src": "./Project Cactus.svg",
-        "type": "image/png", "sizes": "96x96"
+        "src": "Project Cactus.svg",
+        "type": "image/svg", "sizes": "96x96"
       },
       {
-        "src": "./Project Cactus.svg",
-        "type": "image/png","sizes": "128x128"
+        "src": "Project Cactus.svg",
+        "type": "image/svg","sizes": "128x128"
       },
       {
-        "src": "./Project Cactus.svg",
-        "type": "image/png", "sizes": "144x144"
+        "src": "Project Cactus.svg",
+        "type": "image/svg", "sizes": "144x144"
       },
       {
-        "src": "./Project Cactus.svg",
-        "type": "image/png", "sizes": "152x152"
+        "src": "Project Cactus.svg",
+        "type": "image/svg", "sizes": "152x152"
       },
       {
-        "src": "./Project Cactus.svg",
-        "type": "image/png", "sizes": "192x192"
+        "src": "Project Cactus.svg",
+        "type": "image/svg", "sizes": "192x192"
       },
       {
-        "src": "./Project Cactus.svg",
-        "type": "image/png", "sizes": "384x384"
+        "src": "Project Cactus.svg",
+        "type": "image/svg", "sizes": "384x384"
       },
       {
-        "src": "./Project Cactus.svg",
-        "type": "image/png", "sizes": "512x512"
+        "src": "Project Cactus.svg",
+        "type": "image/svg", "sizes": "512x512"
       }
     ]
   }
