@@ -71,7 +71,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<a href="https://project-cactus-c9549.web.app/"><img src="assets/demo.gif" alt="demo.gif"></a>
+<a href="https://project-cactus-c9549.web.app/"><img src="assets/demo_web.gif" alt="demo_web.gif"></a>
+<a href="https://github.com/Ducksss/Project-Cactus/blob/main/README.md#browser-extension"><img src="assets/demo_ext.gif" alt="demo_ext.gif"></a>
 
 The past few years have seen a surge in the spread of fake news, and it's increasing impact on our daily lives. Unfortunately, the flood of fake news online has made it difficult and tiring for people to fact check what they see online. 
 
