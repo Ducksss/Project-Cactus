@@ -28,7 +28,9 @@
     A cross-platform AI Fake News Detector
     <br />
     <br />
-    <a href="https://project-cactus-c9549.web.app/">Demo Website</a>
+    <a href="https://project-cactus-c9549.web.app/">Web Application</a>
+    ·
+    <a href="#browser-extension">Browser Extension</a>
     ·
     <a href="https://github.com/Ducksss/Project-Cactus/issues">Report Bugs</a>
     ·
@@ -51,8 +53,8 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#progressive-web-application">Progressive Web Application</a></li>
+        <li><a href="#browser-extension">Browser Extension</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
