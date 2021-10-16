@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Cactus</title>
+    <link rel="shortcut icon" type="image/svg" href="Project Cactus.svg"/>
+
+    <link rel="manifest" href="manifest.json" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="Project Cactus.svg" />
+    <link rel="apple-touch-icon" href="Project Cactus.svg" />
+    <link rel="apple-touch-icon" href="Project Cactus.svg" />
+    <link rel="apple-touch-icon" href="Project Cactus.svg" />
+    <link rel="apple-touch-icon" href="Project Cactus.svg" />
+    <link rel="apple-touch-icon" href="Project Cactus.svg" />
+    <link rel="apple-touch-icon" href="Project Cactus.svg" />
+    <link rel="apple-touch-icon" href="Project Cactus.svg" />
+    <meta name="apple-mobile-web-app-status-bar" content="#323232" />
+    <meta name="theme-color" content="#323232" />
+</head>
+<body :class="{ 'dark': darkMode }">
+    <div id="app" @mounted="mounted">
+        <nav>
+            <div v-if="_searchedNews" class="logo-link" @click="window.location = '/'">
+                <img class="logo" src="./Project Cactus.svg" alt="logo">
+                <h1>Project Cactus</h1>
+            </div>
+            <div v-else></div>
+
+            <div>
+                <h4 class="dark-mode">Dark Mode</h4>
+                <div @click="_toggleDarkMode" :class="['switch', darkMode ? 'on' : 'off']">
+                    <div class="switch-state"></div>
+                </div>
+
+                <button v-if="!_searchedNews" class="small-button" type="button" @click="_shareLink">
+                    <h4>
+                        share
+                    </h4>
+                </button>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div id="model-results" v-if="_searchedNews">
+                <p class="text-muted">
+                    Press <code>enter</code> to submit
+                </p>
+                <textarea @click="$event.target.select()" id="filled-box" class="search-box" placeholder="Paste Headline" v-model="newsHeadline">{{ _newsHeadline }}</textarea>
+
+                <div v-if="loading" class="load">
+                    <!-- background light grey ring -->
+                    <svg class="loader" xmlns="http://www.w3.org/2000/svg" width="101" height="101" viewBox="0 0 101.001 100.999">
+                        <path id="Subtraction_420" data-name="Subtraction 420" d="M7930,774.5a50.341,50.341,0,1,1,19.657-3.969A50.185,50.185,0,0,1,7930,774.5Zm0-88a37.386,37.386,0,1,0,14.6,2.947A37.259,37.259,0,0,0,7930,686.5Z" transform="translate(-7879.5 -673.5)" fill="#e8e8e8"/>
+                    </svg>
+                    <!-- main spinner -->
+                    <svg class="loader move" xmlns="http://www.w3.org/2000/svg" width="101" height="101" viewBox="0 0 101 101">
+                        <g id="Group_274" data-name="Group 274" transform="translate(-313.498 -191.5)">
+                            <path id="Union_239" data-name="Union 239" d="M8000,844v0a49.957,49.957,0,0,1,50-50v0a6,6,0,1,1,0,12h-.008A37.968,37.968,0,0,0,8012,844h0v0a6,6,0,0,1-12,0Z" transform="translate(-7685.999 -601.999)" fill="#343434"/>
+                            <rect id="Rectangle_1574" data-name="Rectangle 1574" width="101" height="101" transform="translate(313.498 191.5)" fill="none"/>
+                        </g>
+                    </svg>
+                    <!-- second spinner -->
+                    <svg class="loader move" id="secondary" xmlns="http://www.w3.org/2000/svg" width="101" height="101" viewBox="0 0 101 101">
+                        <g id="Group_273" data-name="Group 273" transform="translate(-313.498 -191.5)">
+                            <path id="Union_239" data-name="Union 239" d="M8000,844c0-.058,0-.116,0-.173A49.95,49.95,0,0,1,8049.875,794a6,6,0,0,0,.03,12A37.967,37.967,0,0,0,8012,844h0v0a6,6,0,0,1-12,0Z" transform="translate(-7685.999 -601.999)" fill="#3a7563"/>
+                            <rect id="Rectangle_1574" data-name="Rectangle 1574" width="101" height="101" transform="translate(313.498 191.5)" fill="none"/>
+                        </g>
+                    </svg>
+                    <!-- third spinner -->
+                    <svg class="loader move" id="third" xmlns="http://www.w3.org/2000/svg" width="101" height="101" viewBox="0 0 101 101">
+                        <g id="Group_268" data-name="Group 268" transform="translate(-313.498 -191.5)">
+                            <path id="Union_239" data-name="Union 239" d="M8000,844c0-.058,0-.116,0-.173A49.95,49.95,0,0,1,8049.875,794a6,6,0,0,0,.03,12A37.967,37.967,0,0,0,8012,844h0v0a6,6,0,0,1-12,0Z" transform="translate(-7685.999 -601.999)" fill="#b4cd93"/>
+                            <rect id="Rectangle_1574" data-name="Rectangle 1574" width="101" height="101" transform="translate(313.498 191.5)" fill="none"/>
+                        </g>
+                    </svg>
+                        <!-- light grey cover up after third spinner -->
+                    <svg class="loader move" id="cover" xmlns="http://www.w3.org/2000/svg" width="101.001" height="101" viewBox="0 0 101.001 101">
+                        <g id="Group_272" data-name="Group 272" transform="translate(172.501 -193.5) rotate(90)">
+                            <path id="Union_239" data-name="Union 239" d="M.5,57.66A51.312,51.312,0,0,1,0,50.5,50.462,50.462,0,0,1,50.5,0a51.438,51.438,0,0,1,7.162.5H50.5a6,6,0,0,0,0,12V13H50.5A37.464,37.464,0,0,0,13,50.5h-.5a6,6,0,1,1-12,0V57.66Z" transform="translate(193.5 172.501) rotate(-90)" fill="#e8e8e8"/>
+                            <rect id="Rectangle_1574" data-name="Rectangle 1574" width="101" height="101" transform="translate(193.5 172.5) rotate(-90)" fill="none"/>
+                        </g>
+                    </svg>
+
+                    <h2>Verifying News</h2>
+                </div>
+
+                <div v-else>
+                    <h3>The model is</h3>
+                    <h1 class="display-1">
+                        {{ newsConfidence }}%
+                    </h1>
+                    <p>confident that this news is fake</p>
+
+                    <div class="share-button">
+                        <button class="small-button" type="button" @click="_shareLink">
+                            <h4>
+                                share
+                            </h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div v-else id="centered-input">
+                <div class="logo-container">
+                    <img class="logo" src="./Project Cactus.svg" alt="logo">
+                </div>
+                <h1>Project Cactus</h1>
+                <p>
+                    Find out if a piece of news is real or fake.
+                </p>
+                <textarea id="empty-search" class="search-box" 
+                    placeholder="Paste Headline"
+                    v-model="newsHeadline"
+                ></textarea>
+                <p class="text-muted">
+                    Press <code>enter</code> to submit
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.bundle.js"></script>
+</body>
+</html>
