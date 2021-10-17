@@ -1,4 +1,5 @@
-## NOTE: THE MODEL IS CURRENTLY OFFLINE AND NOT SUPPORTED (RAN OUT OF GOOGLE CLOUD AI CREDITS...)
+## NOTE: THE MODEL IS CURRENTLY OFFLINE AND NOT SUPPORTED
+#### Unfortunately, we don't have the financial capability to maintain the Google Cloud API. As such, we have no choice but to shut down the model. Nevertheless, this repo includes the instructions and code required for any interested parties to self host the system. We thank you for your understanding and support.
 
 <div id="top"></div>
 
