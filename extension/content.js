@@ -6,30 +6,6 @@ console.log("Here is still being called");
  * UTILITY FUCTIONS
  * 
  */
-// Function to scan for new tweets
-const mutationScanner = (function () {
-    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-    return function (obj, callback) {
-        if (!obj || obj.nodeType !== 1)
-            return;
-        if (MutationObserver) {
-            // New observer
-            var mutationObserver = new MutationObserver(callback)
-            // Observe changes in children (includes divs)
-            mutationObserver.observe(obj, {
-                childList: true,
-                subtree: false
-            });
-            return mutationObserver;
-        }
-        // browser support fallback
-        else if (window.addEventListener) {
-            obj.addEventListener('DOMNodeInserted', callback, false)
-            obj.addEventListener('DOMNodeRemoved', callback, false)
-        }
-    }
-})();
-
 // Scans the content
 const contentScanner = async (content) => {
     return new Promise((resolve, reject) => {
@@ -76,9 +52,6 @@ const fetchDataFromAPI = async (cleanedText) => {
             .catch((error) => {
                 reject({ name: "fetchDataFromAPI", description: "fetchDataFromAPI" })
             })
-
-        // await timeout(1500);
-        // resolve([[Math.random()]][0])
     })
 };
 
@@ -142,6 +115,27 @@ const runTweetCheck = async (allNodes) => {
     }
 };
 
+// Function to scan for new tweets
+const mutationScanner = (function () {
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+    return function (obj, callback) {
+        if (!obj || obj.nodeType !== 1)
+            return;
+        if (MutationObserver) {
+            var mutationObserver = new MutationObserver(callback)
+            mutationObserver.observe(obj, {
+                childList: true,
+                subtree: false
+            });
+            return mutationObserver;
+        }
+        else if (window.addEventListener) {
+            obj.addEventListener('DOMNodeInserted', callback, false)
+            obj.addEventListener('DOMNodeRemoved', callback, false)
+        }
+    }
+})();
+
 /**
  * 
  * MAIN FUCTIONS
@@ -184,12 +178,11 @@ const processPostsContainer = async (res) => {
         mutationScanner(res, function (res2) {
             const addedNodes = [];
 
-            // Record down added divs
             res2.forEach(record => {
                 record.addedNodes.length & addedNodes.push(...record.addedNodes);
             });
 
-            // Run the script for added nodes
+            // Run the script for the newly added nodes
             runTweetCheck(addedNodes);
 
             /**
@@ -207,10 +200,3 @@ const processPostsContainer = async (res) => {
 (async () => {
     main(getPostsContainer, processPostsContainer);
 })();
-
-/**
- * Redudant Code - to be removed on submission
- */
-const timeout = (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
