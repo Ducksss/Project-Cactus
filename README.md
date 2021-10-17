@@ -196,7 +196,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-- Wong Zhao Wu (Backend API Developer & Data Curator) - [LinkedIn](https://twitter.com/twitter_handlehttps://www.linkedin.com/in/zhao-wu-wong-27b434201/) - zhaowu.wong@gmail.com
+- Wong Zhao Wu (Backend API Developer & Data Curator) - [LinkedIn](https://www.linkedin.com/in/zhao-wu-wong-27b434201/) - zhaowu.wong@gmail.com
 
 - Oh Tien Cheng (Machine Learning Engineer) - [LinkedIn](https://www.linkedin.com/in/ohtiencheng/) - tiencheng@pm.me
 
